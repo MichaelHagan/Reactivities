@@ -1,35 +1,40 @@
-import { createBrowserRouter } from 'react-router';
-import App from '../layout/App';
-import HomePage from '../../features/home/HomePage';
-import ActivityDashboard from '../../features/activities/dashbooard/ActivityDashboard';
-import ActivityForm from '../../features/activities/form/ActivityForm';
-import ActivityDetailPage from '../../features/activities/details/ActivityDetailPage';
+import { createBrowserRouter } from "react-router";
+import App from "../layout/App";
+import HomePage from "../../features/home/HomePage";
+import ActivityDashboard from "../../features/activities/dashbooard/ActivityDashboard";
+import ActivityForm from "../../features/activities/form/ActivityForm";
+import ActivityDetailPage from "../../features/activities/details/ActivityDetailPage";
+import Counter  from "../../features/counter/Counter";
 
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <App />,
     children: [
       {
-        path: '',
+        path: "",
         element: <HomePage />,
       },
       {
-        path: 'activities',
+        path: "activities",
         element: <ActivityDashboard />,
       },
       {
-        path: 'activities/:id',
+        path: "activities/:id",
         element: <ActivityDetailPage />,
       },
       {
-        path: '/createActivity',
+        path: "createActivity",
         element: <ActivityForm key="create" />,
       },
       {
-        path: '/manage/:id',
+        path: "manage/:id",
         element: <ActivityForm />,
       },
+      {
+        path: "counter",
+        element: <Counter />,
+      },
     ],
-  }
+  },
 ]);
